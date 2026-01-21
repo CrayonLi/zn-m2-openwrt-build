@@ -15,4 +15,4 @@
 #
 ./scripts/feeds install -p kenzok8 adguardhome
 ./scripts/feeds install -p kenzok8 luci-app-adguardhome
-./scripts/feeds install -p kenzok8 luci-app-openclash
+#./scripts/feeds install -p kenzok8 luci-app-openclash
