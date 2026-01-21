@@ -15,6 +15,8 @@
 #
 rm -rf feeds/luci/applications/luci-app-openclash
 #
+git clone https://github.com/kenzok8/small-package/tree/main/luci-app-openclash.git -b main feeds/luci/applications/luci-app-openclash
+#
 ./scripts/feeds install luci-app-openclash
 ./scripts/feeds install -p kenzok8 adguardhome
 ./scripts/feeds install -p kenzok8 luci-app-adguardhome
