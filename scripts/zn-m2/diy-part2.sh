@@ -13,7 +13,11 @@
 # ./scripts/feeds install -a -f -p passwall_packages
 # ./scripts/feeds install -a -f -p passwall_luci
 #
+rm -rf feeds/luci/applications/luci-app-openclash
+git clone https://github.com/vernesong/OpenClash -b master feeds/luci/applications/luci-app-openclash
 #
+#
+./scripts/feeds install luci-app-openclash
 ./scripts/feeds install -p kenzok8 adguardhome
 ./scripts/feeds install -p kenzok8 luci-app-adguardhome
 
