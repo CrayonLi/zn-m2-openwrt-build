@@ -30,17 +30,17 @@ sed -i -r 's#/bin/login#/bin/login -f root#g' feeds/packages/utils/ttyd/files/tt
 #sed -i -r "s#navbar_proxy = 'openclash'#navbar_proxy = 'passwall'#g" feeds/luci/themes/luci-theme-design/luasrc/view/themes/design/header.htm
 
 #添加openclash内核
-mkdir -p files/etc/openclash/core
+mkdir -p files/tmp/etc/openclash/core
 
 CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
 GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
 GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 
-wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
-wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
-wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
+wget -qO- $CLASH_META_URL | tar xOvz > files/tmp/etc/openclash/core/clash_meta
+wget -qO- $GEOIP_URL > files/tmp/etc/openclash/GeoIP.dat
+wget -qO- $GEOSITE_URL > files/tmp/etc/openclash/GeoSite.dat
 
-chmod +x files/etc/openclash/core/clash_meta
+chmod +x files/tmp/etc/openclash/core/clash*
 
 #添加AdGuardHome内核
 mkdir -p files/usr/bin/AdGuardHome
