@@ -119,6 +119,12 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: Prepare tmp directory
+      run: |
+        sudo mkdir -p /workdir/tmp
+        sudo chmod 777 /workdir/tmp
+
+
     # - name: Compile the firmware
       # id: compile
       # run: |
@@ -132,6 +138,8 @@ jobs:
 
     - name: Compile the firmware
       id: compile
+      env:
+        TMPDIR: /workdir/tmp
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
